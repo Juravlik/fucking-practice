@@ -9,7 +9,7 @@
 
 using namespace std;
 
-double DoubleRand(double _max, double _min)                 //с.з. равномерное распределенной на [_min, _max] с.в.
+double DoubleRand(double _max, double _min)                 //с.з. равномерное распределенной на [_min, _max] с.в. 
 {
 	return _min + double(rand()) / RAND_MAX * (_max - _min); 
 }
