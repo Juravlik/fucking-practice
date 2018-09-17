@@ -9,7 +9,7 @@
 
 using namespace std;
 
-double DoubleRand(double _max, double _min)                 //с.з. равномерное распределенной на [_min, _max] с.в.
+double DoubleRand(double _max, double _min)                  //СЃ.Р·. СЂР°РІРЅРѕРјРµСЂРЅРѕРµ СЂР°СЃРїСЂРµРґРµР»РµРЅРЅРѕР№ РЅР° [_min, _max] СЃ.РІ.
 {
 	return _min + double(rand()) / RAND_MAX * (_max - _min); 
 }
@@ -35,8 +35,8 @@ int main() {
 	
 	srand( time(0) );
 	
-	double * mas_nu = new double[n]; 		// Массив с.в. равномерно распределённых на [0,1]
-	double * mas_x = new double[n];			// Массив с.в. распределённых по данному закону распределения на [0, C]
+	double * mas_nu = new double[n]; 		// РњР°СЃСЃРёРІ СЃ.РІ. СЂР°РІРЅРѕРјРµСЂРЅРѕ СЂР°СЃРїСЂРµРґРµР»С‘РЅРЅС‹С… РЅР° [0,1]
+	double * mas_x = new double[n];			// РњР°СЃСЃРёРІ СЃ.РІ. СЂР°СЃРїСЂРµРґРµР»С‘РЅРЅС‹С… РїРѕ РґР°РЅРЅРѕРјСѓ Р·Р°РєРѕРЅСѓ СЂР°СЃРїСЂРµРґРµР»РµРЅРёСЏ РЅР° [0, C]
 	double * mas_F = new double[n];
 	
 	for (int i = 0; i < n; i++)
@@ -87,13 +87,13 @@ int main() {
 		}
 	}
 
-	double * mas_p_j = new double[n];		//Вероятность попадания в j-тый интервал
+	double * mas_p_j = new double[n];		//Р’РµСЂРѕСЏС‚РЅРѕСЃС‚СЊ РїРѕРїР°РґР°РЅРёСЏ РІ j-С‚С‹Р№ РёРЅС‚РµСЂРІР°Р»
 	for(int i = 0; i < n; i++)
 	{
 		mas_p_j[i] = F(h * (i + 1)) - F(h * i);
 	}
 	
-	double * mas_E_j = new double[n];		//Ожидаемое число попаданий в j-тый интервал
+	double * mas_E_j = new double[n];		//РћР¶РёРґР°РµРјРѕРµ С‡РёСЃР»Рѕ РїРѕРїР°РґР°РЅРёР№ РІ j-С‚С‹Р№ РёРЅС‚РµСЂРІР°Р»
 	for(int i = 0; i < n; i++)
 	{
 		mas_E_j[i] = n * mas_p_j[i];
