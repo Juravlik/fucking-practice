@@ -9,10 +9,10 @@
 
 using namespace std;
 
-double DoubleRand(double _max, double _min)                 //с.з. равномерное распределенной на [_min, _max] с.в.
-    {
-		return _min + double(rand()) / RAND_MAX * (_max - _min); 
-	}
+double DoubleRand(double _max, double _min)                 //СЃ.Р·. СЂР°РІРЅРѕРјРµСЂРЅРѕРµ СЂР°СЃРїСЂРµРґРµР»РµРЅРЅРѕР№ РЅР° [_min, _max] СЃ.РІ.
+{
+	return _min + double(rand()) / RAND_MAX * (_max - _min); 
+}
 
 
 void create_mas_A (int* mas_A, int n) 
@@ -42,18 +42,18 @@ int main() {
 	double p;
 	cin >> p;
 	
-	int * mas_A = new int[n]; // Массив возможных значений с.в. a_k
+	int * mas_A = new int[n]; // РњР°СЃСЃРёРІ РІРѕР·РјРѕР¶РЅС‹С… Р·РЅР°С‡РµРЅРёР№ СЃ.РІ. a_k
 	create_mas_A(mas_A, n);
-	double * mas_P = new double[n]; // P_k 
+	double * mas_P = new double[n];
 	create_mas_P(mas_P, n, p);
 	
 	
 	srand( time(0) );
 	
 	
-	int * mas_AA = new int[n]; // Массив с.в. в выборке
+	int * mas_AA = new int[n]; // РњР°СЃСЃРёРІ СЃ.РІ. РІ РІС‹Р±РѕСЂРєРµ
 	
-	int * mas_n_j = new int[n]; //Массив, содержащий кол-во попаданий в определённый интверал
+	int * mas_n_j = new int[n]; //РњР°СЃСЃРёРІ, СЃРѕРґРµСЂР¶Р°С‰РёР№ РєРѕР»-РІРѕ РїРѕРїР°РґР°РЅРёР№ РІ РѕРїСЂРµРґРµР»С‘РЅРЅС‹Р№ РёРЅС‚РІРµСЂР°Р»
 	for (int i = 0; i < n; i++) 
 		mas_n_j[i] = 0;
 		
@@ -73,8 +73,8 @@ int main() {
 		  }
 	}
 	
-	double M_t = 0, M_v = 0;            // Теоретическое и выборочное мат. ожидание
-	double D_t = 0, D_v = 0;            // Теоретическая и выборочная дисперсия
+	double M_t = 0, M_v = 0;            // РўРµРѕСЂРµС‚РёС‡РµСЃРєРѕРµ Рё РІС‹Р±РѕСЂРѕС‡РЅРѕРµ РјР°С‚. РѕР¶РёРґР°РЅРёРµ
+	double D_t = 0, D_v = 0;            // РўРµРѕСЂРµС‚РёС‡РµСЃРєР°СЏ Рё РІС‹Р±РѕСЂРѕС‡РЅР°СЏ РґРёСЃРїРµСЂСЃРёСЏ
 	
 	for (int i = 0; i < n; i++)
 	{
@@ -96,7 +96,7 @@ int main() {
 	cout << "D_v = " << D_v << endl; 
 	
 	
-	double * mas_E_j = new double[n]; // Массив ожидаемых чисел попаданий в i-й интервал
+	double * mas_E_j = new double[n]; // РњР°СЃСЃРёРІ РѕР¶РёРґР°РµРјС‹С… С‡РёСЃРµР» РїРѕРїР°РґР°РЅРёР№ РІ i-Р№ РёРЅС‚РµСЂРІР°Р»
 	for(int i = 0; i < n; i++)
 		mas_E_j[i] = n * mas_P[i];
 	
